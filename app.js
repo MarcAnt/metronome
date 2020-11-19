@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function(){
 const playBtn = document.getElementById('play'); 
 const plusBtn = document.getElementById('plus'); 
 const lessBtn = document.getElementById('less'); 
-const container = document.querySelector('.container'); 
 let bpmText = document.getElementById('bpm'); 
 const beat = document.getElementById('beat'); 
 const boxes = document.querySelectorAll('.box'); 
@@ -108,6 +107,7 @@ function addBpm() {
             setPlay = true; 
             play.children[0].setAttribute('name', 'play'); 
             stopPulse(); 
+            stopAnimation(); 
             interval = parseInt(bpmCounter); 
             initPulse = setInterval(playPulse, interval);
             initAnimation = setInterval(boxAnimate, interval);
@@ -131,6 +131,7 @@ function sustBpm() {
             setPlay = true; 
             play.children[0].setAttribute('name', 'play'); 
             stopPulse(); 
+            stopAnimation(); 
             interval = parseInt(bpmCounter); 
             initPulse = setInterval(playPulse, interval);
             initAnimation = setInterval(boxAnimate, interval);
